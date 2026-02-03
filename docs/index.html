@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="es" dir="ltr">
 <head>
@@ -178,3 +179,255 @@
       .cta{ justify-content: center }
     }
 
+    .item{ padding: 16px; border: 1px solid var(--border); border-radius: 12px; background: color-mix(in oklab, var(--card) 95%, transparent) }
+    .item h3{ margin: 0 0 4px 0; font-size: 18px }
+    .meta{ color: var(--muted); font-size: 14px }
+    .tags{ display:flex; flex-wrap: wrap; gap: 8px; margin-top: 10px }
+    .tag{
+      font-size: 12px; padding: 4px 8px; border: 1px solid var(--border); border-radius: 999px;
+      background: color-mix(in oklab, var(--brand-2) 15%, transparent);
+      color: color-mix(in oklab, var(--brand-2) 85%, var(--text));
+    }
+
+    /* ===== Footer ===== */
+    footer{ margin: 28px 0 40px; color: var(--muted); text-align: center }
+    .social{ display:flex; gap: 12px; justify-content:center; flex-wrap: wrap; margin: 12px 0 }
+    .social a{ border:1px solid var(--border); padding:8px 12px; border-radius: 10px; background: var(--bg-soft) }
+
+    /* ===== Accesibilidad ===== */
+    :focus-visible{ outline: 3px solid color-mix(in oklab, var(--brand) 55%, transparent); outline-offset: 2px }
+
+    /* ===== Estilo impresión (CV 1 página) ===== */
+    @media print{
+      header.site, .cta, .social{ display:none !important }
+      body{ background: white; color: black }
+      section{ break-inside: avoid; box-shadow:none; border:1px solid #ccc }
+      .wrap{ max-width: 900px }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navegación -->
+  <header class="site" role="banner">
+    <div class="wrap nav" aria-label="Barra de navegación">
+      <div class="brand">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Jose Alberto López Patiño</span>
+      </div>
+      <nav aria-label="Secciones">
+        <ul role="list">
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#experiencia">Experiencia</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#educacion">Educación</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="contenido" class="wrap">
+    <section class="hero" aria-label="Presentación">
+      <div>
+        <h1>Ingeniero de Desarrollo y Soporte</h1>
+        <p class="subtitle">
+          Especializado en automatizaciones con el ecosistema <strong>Microsoft 365</strong>
+          (Power Automate, SharePoint, Teams), gestión de solicitudes y producción audiovisual con <strong>Adobe</strong>.
+          Enfoque en confiabilidad, UX clara y entrega ágil de valor.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#contacto">📬 Contactar</a>
+          <a class="btn" href="assets/cv.pdf" download>⬇️ Descargar CV (PDF)</a>
+          <a class="btn" href="https://github.com/joallopa" target="_blank" rel="noopener">🐙 GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/TU_PERFIL" target="_blank" rel="noopener">🔗 LinkedIn</a>
+        </div>
+      </div>
+      <div class="hero-right" aria-hidden="false">
+        <div class="avatar">
+          <img src="assets/avatar.jpg" alt="Foto de perfil de Jose Alberto López Patiño" width="360" height="360" loading="eager">
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre mí -->
+    <section id="sobre-mi" aria-labelledby="tit-sobre-mi">
+      <h2 id="tit-sobre-mi">Sobre mí <span class="pill">Disponible para nuevos retos</span></h2>
+      <div class="grid-2">
+        <div class="item">
+          <p>
+            Me motiva transformar procesos manuales en flujos <strong>automatizados</strong>, medibles
+            y fáciles de usar. He liderado la implementación de tableros de seguimiento, formularios
+            inteligentes y sistemas de notificación para áreas de comunicaciones y mercadeo.
+          </p>
+          <p>
+            Combino <strong>soporte técnico</strong> y <strong>desarrollo low‑code</strong> con una visión
+            <strong>audiovisual</strong> para entregar soluciones integrales: desde la captura de requerimientos
+            hasta la entrega y documentación.
+          </p>
+        </div>
+        <div class="item">
+          <ul>
+            <li><strong>Ubicación:</strong> Bogotá, Cundinamarca (CO)</li>
+            <li><strong>Idiomas:</strong> Español (nativo), Inglés (intermedio)</li>
+            <li><strong>Intereses:</strong> Automatización, UX de procesos, narrativas visuales, IA aplicada</li>
+            <li><strong>Disponibilidad:</strong> Híbrido o remoto</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experiencia -->
+    <section id="experiencia" aria-labelledby="tit-experiencia">
+      <h2 id="tit-experiencia">Experiencia reciente</h2>
+      <div class="item">
+        <h3>Ingeniero de Desarrollo y Soporte</h3>
+        <div class="meta">Empresa / 2023 — Actualidad · Bogotá</div>
+        <p>
+          Implementación de un proceso profesional para gestionar solicitudes de comunicaciones y mercadeo:
+          eventos, diseño gráfico, edición multimedia, contenidos web, asignación de tareas, cronogramas,
+          prioridades, esfuerzo estimado y respuestas automatizadas.
+        </p>
+        <div class="tags">
+          <span class="tag">Power Automate</span>
+          <span class="tag">SharePoint Lists</span>
+          <span class="tag">Teams</span>
+          <span class="tag">Power BI</span>
+          <span class="tag">Adobe Premiere / After Effects</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <h3>Diseño y Producción Audiovisual (Freelance)</h3>
+        <div class="meta">2020 — 2023</div>
+        <p>
+          Producción de piezas de video y motion graphics, estandarización de plantillas y optimización
+          de flujos con integraciones M365 y Adobe.
+        </p>
+        <div class="tags">
+          <span class="tag">Premiere Pro</span>
+          <span class="tag">After Effects</span>
+          <span class="tag">Photoshop</span>
+          <span class="tag">Bridge</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="proyectos" aria-labelledby="tit-proyectos">
+      <h2 id="tit-proyectos">Proyectos seleccionados</h2>
+      <div class="grid-3">
+        <article class="item" aria-label="Proyecto 1">
+          <h3>Sistema de solicitudes de MKT</h3>
+          <p>Portal con formularios, SLA, priorización, alertas en Teams y panel KPI.</p>
+          <div class="tags">
+            <span class="tag">SharePoint</span><span class="tag">Power Automate</span><span class="tag">Power BI</span>
+          </div>
+        </article>
+        <article class="item" aria-label="Proyecto 2">
+          <h3>Repositorio multimedia</h3>
+          <p>Taxonomía, versionamiento y búsquedas facetadas para activos creativos.</p>
+          <div class="tags">
+            <span class="tag">SharePoint</span><span class="tag">Metadatos</span><span class="tag">UX</span>
+          </div>
+        </article>
+        <article class="item" aria-label="Proyecto 3">
+          <h3>Plantillas motion</h3>
+          <p>Librería de MOGRTs y presets para videos consistentes y ágiles.</p>
+          <div class="tags">
+            <span class="tag">Premiere</span><span class="tag">After Effects</span><span class="tag">Branding</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section id="habilidades" aria-labelledby="tit-habilidades">
+      <h2 id="tit-habilidades">Habilidades</h2>
+      <div class="grid-3">
+        <div class="item">
+          <h3>Microsoft 365</h3>
+          <ul>
+            <li>Power Automate (flujos, conectores)</li>
+            <li>SharePoint (listas, permisos, vistas)</li>
+            <li>Teams (notificaciones, tabs)</li>
+            <li>Power BI (reportes básicos)</li>
+          </ul>
+        </div>
+        <div class="item">
+          <h3>Desarrollo / Soporte</h3>
+          <ul>
+            <li>Solución de incidentes y documentación</li>
+            <li>Integraciones low‑code / no‑code</li>
+            <li>Buenas prácticas de gobernanza</li>
+            <li>GitHub (issues, pages)</li>
+          </ul>
+        </div>
+        <div class="item">
+          <h3>Diseño & Media</h3>
+          <ul>
+            <li>Premiere Pro, After Effects</li>
+            <li>Photoshop, Illustrator</li>
+            <li>Storytelling, motion graphics</li>
+            <li>Optimización de activos</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Educación -->
+    <section id="educacion" aria-labelledby="tit-educacion">
+      <h2 id="tit-educacion">Educación</h2>
+      <div class="item">
+        <h3>Ingeniería / Certificaciones</h3>
+        <p class="meta">Universidad / Años</p>
+        <ul>
+          <li>Certificación Microsoft (si aplica)</li>
+          <li>Diplomados o cursos relevantes</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" aria-labelledby="tit-contacto">
+      <h2 id="tit-contacto">Contacto</h2>
+      <div class="grid-2">
+        <div class="item">
+          <p><strong>Correo:</strong> <a href="mailto:TU_CORREO@dominio.com">TU_CORREO@dominio.com</a></p>
+          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/TU_PERFIL" target="_blank" rel="noopener">linkedin.com/in/TU_PERFIL</a></p>
+          <p><strong>GitHub:</strong> <a href="https://github.com/joallopa" target="_blank" rel="noopener">github.com/joallopa</a></p>
+        </div>
+        <form class="item" aria-label="Formulario de contacto" name="contact" method="post" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
+          <label>Nombre
+            <input name="nombre" required style="display:block;width:100%;padding:10px;border-radius:8px;border:1px solid var(--border);background:var(--bg-soft);color:var(--text)" />
+          </label>
+          <label style="margin-top:10px">Correo
+            <input type="email" name="email" required style="display:block;width:100%;padding:10px;border-radius:8px;border:1px solid var(--border);background:var(--bg-soft);color:var(--text)" />
+          </label>
+          <label style="margin-top:10px">Mensaje
+            <textarea name="mensaje" rows="4" required style="display:block;width:100%;padding:10px;border-radius:8px;border:1px solid var(--border);background:var(--bg-soft);color:var(--text)"></textarea>
+          </label>
+          <button class="btn" type="submit" style="margin-top:12px">Enviar</button>
+          <p class="meta" style="margin-top:8px">*Puedes integrar este formulario con Netlify, Microsoft Forms o Power Automate.</p>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="social" aria-label="Redes">
+        <a href="https://github.com/joallopa" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/TU_PERFIL" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:TU_CORREO@dominio.com">Email</a>
+      </div>
+      <small>© <span id="y"></span> Jose Alberto López Patiño — Hecho con HTML/CSS • Modo oscuro automático</small>
+    </footer>
+  </main>
+
+  <script>
+    // Año dinámico
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
