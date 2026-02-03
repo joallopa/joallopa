@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jose Alberto López Patiño   | Ingeniero Desarrollo y Soporte</title>
-  <meta name="description" content="Hoja de vida profesional de Jose Alberto López Patiño: Ingeniería de desarrollo y soporte, automatización con Microsoft 365, Adobe Suite, proyectos multimedia." />
+  <title>Jose Alberto López Patiño | Ingeniero de Desarrollo y Soporte</title>
+  <meta name="description" content="Hoja de vida profesional de Jose Alberto López Patiño: ingeniería de desarrollo y soporte, automatización con Microsoft 365, Adobe Suite y proyectos multimedia." />
 
   <!-- Paleta y tema -->
   <meta name="theme-color" content="#0f172a" />
@@ -12,10 +12,14 @@
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="profile" />
-  <meta property="og:title" content="Jose Alberto López Patiño | Ingeniero Desarrollo y Soporte" />
+  <meta property="og:title" content="Jose Alberto López Patiño | Ingeniero de Desarrollo y Soporte" />
   <meta property="og:description" content="Perfil profesional, proyectos, experiencia y contacto." />
-  <meta property="og:image" content="https://TU_USUARIO.github.io/assets/cover.jpg" />
-  <meta property="og:url" content="https://TU_USUARIO.github.io/" />
+  <!-- Usa una ruta RELATIVA para que funcione en /joallopa/ o en la raíz -->
+  <meta property="og:image" content="assets/cover.jpg" />
+  <!-- Si prefieres absoluta (Project Page), descomenta y ajusta:
+  <meta property="og:image" content="https://joallopa.github.io/joallopa/assets/cover.jpg" />
+  -->
+  <meta property="og:url" content="./" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- JSON-LD (Schema.org: Person) -->
@@ -24,13 +28,13 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Jose Alberto López Patiño",
-    "jobTitle": "Ingeniero Desarrollo y Soporte",
-    "image": "https://TU_USUARIO.github.io/assets/avatar.jpg",
-    "url": "https://TU_USUARIO.github.io/",
+    "jobTitle": "Ingeniero de Desarrollo y Soporte",
+    "image": "assets/avatar.jpg",
+    "url": "./",
     "sameAs": [
       "https://www.linkedin.com/in/TU_PERFIL",
-      "https://github.com/TU_USUARIO",
-      "mailto:tu.correo@dominio.com"
+      "https://github.com/joallopa",
+      "mailto:TU_CORREO@dominio.com"
     ],
     "knowsAbout": ["Microsoft 365", "Power Platform", "Automatización", "Adobe Suite", "Producción Audiovisual", "Soporte Técnico"],
     "address": {
@@ -42,9 +46,12 @@
   }
   </script>
 
-  <!-- Fuente (interoperable sin internet opcionalmente) -->
+  <!-- Fuente -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- Favicon opcional -->
+  <link rel="icon" href="assets/avatar.jpg" type="image/jpeg" />
 
   <style>
     /* ===== Variables de tema ===== */
@@ -60,3 +67,114 @@
       --ok: #10b981;            /* verde */
       --danger: #ef4444;        /* rojo */
       --border: #1f2937;
+      --shadow: 0 12px 36px rgba(0,0,0,.35);
+      --radius: 14px;
+      --maxw: 1100px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg: #ffffff;
+        --bg-soft: #f8fafc;
+        --card: #ffffff;
+        --text: #0f172a;
+        --muted: #475569;
+        --border: #e2e8f0;
+        --shadow: 0 10px 28px rgba(2, 6, 23, .08);
+      }
+    }
+
+    /* ===== Reset y base ===== */
+    *,*::before,*::after{ box-sizing: border-box }
+    html,body{ margin:0; padding:0 }
+    body{
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1100px 520px at 85% -10%, rgba(34,211,238,.22), transparent 55%),
+        radial-gradient(900px 460px at 8% -10%, rgba(167,139,250,.16), transparent 55%),
+        var(--bg);
+      line-height: 1.6;
+    }
+    a{ color: var(--brand); text-decoration: none }
+    a:hover{ text-decoration: underline }
+    img{ max-width: 100%; height: auto; display: block }
+
+    .wrap{ width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 24px }
+
+    /* ===== Header / Nav ===== */
+    header.site{
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(8px);
+      background: color-mix(in oklab, var(--bg) 85%, transparent);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav{
+      display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0;
+    }
+    .brand{ display:flex; align-items:center; gap:12px; font-weight: 800; letter-spacing:.2px; color: var(--text) }
+    .brand .dot{
+      width: 12px; height: 12px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow: 0 0 0 4px color-mix(in oklab, var(--brand) 30%, transparent);
+    }
+    .nav ul{ list-style:none; display:flex; gap: 8px; margin:0; padding:0; flex-wrap: wrap }
+    .nav a{
+      padding: 8px 10px; border-radius: 10px; white-space: nowrap; border: 1px solid transparent; color: var(--text);
+    }
+    .nav a:hover{
+      text-decoration: none; border-color: var(--border); background: var(--bg-soft);
+    }
+
+    /* ===== Hero ===== */
+    .hero{
+      display: grid; grid-template-columns: 1.2fr .8fr; gap: 28px; align-items: center; padding: 40px 0 12px;
+    }
+    .hero h1{
+      font-size: clamp(28px, 4vw, 44px); line-height: 1.12; margin: 0 0 10px 0; font-weight: 900;
+      background: linear-gradient(90deg, var(--text), color-mix(in oklab, var(--brand) 35%, var(--text)));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .hero .subtitle{ color: var(--muted); font-size: clamp(15px, 2.2vw, 18px); max-width: 65ch }
+    .hero .cta{ margin-top: 18px; display:flex; gap: 12px; flex-wrap: wrap }
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 10px 14px; border: 1px solid var(--border);
+      background: linear-gradient(180deg, color-mix(in oklab, var(--card) 85%, transparent), var(--card));
+      color: var(--text); border-radius: 10px; box-shadow: var(--shadow); transition: transform .15s ease;
+    }
+    .btn:hover{ transform: translateY(-2px) }
+    .btn.primary{
+      border-color: color-mix(in oklab, var(--brand) 40%, var(--border));
+      background: linear-gradient(135deg, color-mix(in oklab, var(--brand) 22%, var(--card)), color-mix(in oklab, var(--brand-2) 18%, var(--card)));
+    }
+
+    .avatar{ width: 180px; height: 180px; border-radius: 22px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow) }
+    .hero-right{ display:flex; justify-content:center }
+
+    /* ===== Secciones ===== */
+    section{
+      margin: 28px 0; padding: 22px; border: 1px solid var(--border);
+      background: linear-gradient(180deg, color-mix(in oklab, var(--card) 90%, transparent), var(--card));
+      border-radius: var(--radius); box-shadow: var(--shadow);
+    }
+    section h2{
+      margin: 0 0 12px 0; font-size: 22px; letter-spacing: .3px; display:flex; align-items:center; gap:10px;
+    }
+    .pill{
+      display:inline-block; font-size: 12px; padding: 4px 10px; border-radius: 999px;
+      background: color-mix(in oklab, var(--brand) 35%, transparent);
+      color: color-mix(in oklab, var(--brand) 90%, var(--text));
+      border: 1px dashed color-mix(in oklab, var(--brand) 55%, var(--border));
+    }
+
+    /* ===== Grids y listas ===== */
+    .grid-2{ display:grid; grid-template-columns: 1fr 1fr; gap: 16px }
+    .grid-3{ display:grid; grid-template-columns: repeat(3,1fr); gap: 16px }
+    @media (max-width: 900px){
+      .hero{ grid-template-columns: 1fr; text-align: center }
+      .hero-right{ order:-1 }
+      .grid-2, .grid-3{ grid-template-columns: 1fr }
+      .hero .subtitle{ margin-inline: auto }
+      .cta{ justify-content: center }
+    }
+
